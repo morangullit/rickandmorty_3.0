@@ -20,20 +20,20 @@ export function Favorites ({ myFavorites }){
 
 
     return(
-        <div className={styles.container_cards}>
             <div>
-                <select className={styles.select_botton} name='order' onClick={handleDispatch}>
-                    <option value="Ascendente">Ascendente</option>
-                    <option value="Descendente">Descendente</option>
-                </select>
+                <div className={styles.container_cards}>
+                    <select className={styles.select_botton} name='order' onClick={handleDispatch}>
+                        <option value="Ascendente">Ascendente</option>
+                        <option value="Descendente">Descendente</option>
+                    </select>
 
-                <select className={styles.select_botton} name='filter' onClick={handleDispatch}>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Genderless">Genderless</option>
-                    <option value="unknown">unknown</option>
-                </select>
-            </div>
+                    <select className={styles.select_botton} name='filter' onClick={handleDispatch}>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Genderless">Genderless</option>
+                        <option value="unknown">unknown</option>
+                    </select>
+                </div>
 
             {myFavorites?.map(fav => (
                 <Card

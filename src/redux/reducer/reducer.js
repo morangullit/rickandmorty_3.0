@@ -15,12 +15,20 @@ function rootReducer (state=initialState, { type, payload }){
                 myFavorites: [...state.myFavorites, payload]
             }
         case DELETE_FAVORITE:
-            const filtered = state.myFavorites.filter(
+            /* const filtered = state.myFavorites.filter(
                 fav => fav.id !== payload)
             return {
                 ...state,
                 myFavorites: filtered
+            } */
+
+            const newAllCharacters = state.allCharacters.filter(character => character.id !== payload);
+            return {
+                ...state, 
+                myFavorites: newAllCharacters, 
+                allCharacters: newAllCharacters
             }
+
         case FILTER:
             const filterCopy = [...state.allCharacters];
 
