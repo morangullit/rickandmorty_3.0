@@ -1,6 +1,7 @@
 import { connect, useDispatch } from "react-redux"
 import { filterCards, orderCards } from "../../redux/actions/actions";
 import  Card  from "../Card/Card"
+import styles from "./Favorites.module.css"
 
 export function Favorites ({ myFavorites }){
 
@@ -12,28 +13,27 @@ export function Favorites ({ myFavorites }){
         if(name === 'order'){
             return dispatch(orderCards(value))
         }
-        if(name == 'filter'){
+        if(name === 'filter'){
             return dispatch(filterCards(value))
         }
     }
 
 
     return(
-        <div>
+        <div className={styles.container_cards}>
             <div>
-                <select name='order' onClick={handleDispatch}>
+                <select className={styles.select_botton} name='order' onClick={handleDispatch}>
                     <option value="Ascendente">Ascendente</option>
                     <option value="Descendente">Descendente</option>
                 </select>
 
-                <select name='filter' onClick={handleDispatch}>
+                <select className={styles.select_botton} name='filter' onClick={handleDispatch}>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Genderless">Genderless</option>
                     <option value="unknown">unknown</option>
                 </select>
             </div>
-
 
             {myFavorites?.map(fav => (
                 <Card
