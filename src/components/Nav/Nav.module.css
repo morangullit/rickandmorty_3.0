@@ -1,0 +1,31 @@
+.nav_container {
+    display: flex;
+    justify-content: center;
+  }
+
+.random{
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 20px;
+    font-family: 'Unkempt', cursive;
+    cursor: pointer;
+    text-align: center;   
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #b16627;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 5px #999;
+    margin-left: 10px;
+    margin-top: 2px;
+    margin-right: 10px;
+}
+
+.random:hover {background-color: #3e8e41}
+
+.random:active {
+    background-color: #3e8e41;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}

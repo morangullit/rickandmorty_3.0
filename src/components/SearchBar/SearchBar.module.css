@@ -1,0 +1,31 @@
+.search_bar{
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 20px;
+    font-family: 'Unkempt', cursive;
+    cursor: pointer;
+    text-align: center;   
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #b16627;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 5px #999;
+}
+
+.search_bar:hover {background-color: #3e8e41}
+
+.search_bar:active {
+    background-color: #3e8e41;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+  }
+
+.search_input{
+    margin-right: 10px;
+    display: inline-block;
+    border-radius: 15px;
+    padding: 8px 20px;
+    font-size: 20px;
+}

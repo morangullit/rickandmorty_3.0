@@ -1,0 +1,33 @@
+.card_info h3, .card_info p {
+    color: white;
+    font-size: 20px;    
+}
+
+.card_close{
+    background-color: #ec0b0b; /* Green */
+    border: none;
+    color: black;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family: 'Unkempt', cursive;
+    margin: 1px 1px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.card_close:hover {background-color: #daddda}
+
+.card_close:active {
+  background-color: #ec2c2c;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+.card_div{
+  margin: 40px 0;
+  margin-right: 50px;
+}
+
