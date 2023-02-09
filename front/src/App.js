@@ -40,7 +40,7 @@ function App (props) {
       image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
     };
     setCharacters([...characters, example]) */
-    fetch(`http://localhost:3001/rickandmorty/character/${characterId}`)
+    fetch(`http://localhost:3001/rickandmorty/onsearch/${characterId}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {
