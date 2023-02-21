@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Card.module.css';
 import { Link } from 'react-router-dom';
 import { useState, useEffect} from 'react';
-import { addFavorite, deleteFavorite } from '../../redux/actions/actions';
+import { addFavorite, deleteFavorite, getFavorite } from '../../redux/actions/actions';
 import { connect } from 'react-redux';
 
 export function Card(props){
@@ -62,7 +62,6 @@ export function mapDispatchToProps(dispatch){
 }
 
 export function mapStateToProps (state){
-   console.log(state);
   return {
      myFavorites: state.myFavorites
   }

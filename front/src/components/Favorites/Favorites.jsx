@@ -1,5 +1,5 @@
 import { connect, useDispatch } from "react-redux"
-import { filterCards, orderCards } from "../../redux/actions/actions";
+import { filterCards, orderCards, /* getFavorite */ } from "../../redux/actions/actions";
 import  Card  from "../Card/Card"
 import styles from "./Favorites.module.css"
 
@@ -7,7 +7,10 @@ export function Favorites ({ myFavorites }){
 
     const dispatch = useDispatch();
 
+    //dispatch(getFavorite());
+
     const handleDispatch = (e) => {
+
         const { name, value } = e.target;
 
         if(name === 'order'){
@@ -17,8 +20,7 @@ export function Favorites ({ myFavorites }){
             return dispatch(filterCards(value))
         }
     }
-
-
+    
     return(
             <div>
                 <div className={styles.container_cards}>
@@ -42,6 +44,7 @@ export function Favorites ({ myFavorites }){
                 key={fav.id}
                 gender={fav.gender}
                 image={fav.image}
+                species={fav.species}
                 />
             ))}
         </div>
