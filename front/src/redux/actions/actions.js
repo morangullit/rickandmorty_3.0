@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { DELETE_FAVORITE, ADD_FAVORITE, FILTER, ORDER, /* ALL_FAVORITE */ } from "./types.js";
 
+
 /* export function addFavorite(fav){
     return {
         type: ADD_FAVORITE,
@@ -16,10 +17,11 @@ import { DELETE_FAVORITE, ADD_FAVORITE, FILTER, ORDER, /* ALL_FAVORITE */ } from
   };
 } */
 
-export function addFavorite(character) {
+export function addFavorite(props) {
   return function (dispatch) {
     axios
-      .post("http://localhost:3001/rickandmorty/fav", character)
+     
+      .post("http://localhost:3001/rickandmorty/fav", {id: props.id , gender: props.gender, image: props.image, name: props.name, species: props.species})
       .then((response) => response.data)
       .then((data) => dispatch({ type: ADD_FAVORITE, payload: data }));
   };

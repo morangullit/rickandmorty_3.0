@@ -1,5 +1,5 @@
 import { connect, useDispatch } from "react-redux"
-import { filterCards, orderCards, /* getFavorite */ } from "../../redux/actions/actions";
+import { filterCards, orderCards, /* getFavorite */ deleteFavorite } from "../../redux/actions/actions";
 import  Card  from "../Card/Card"
 import styles from "./Favorites.module.css"
 
@@ -20,6 +20,11 @@ export function Favorites ({ myFavorites }){
             return dispatch(filterCards(value))
         }
     }
+
+    function handleClose(id) {
+        dispatch(deleteFavorite(id));
+      }
+      
     
     return(
             <div>
@@ -45,6 +50,7 @@ export function Favorites ({ myFavorites }){
                 gender={fav.gender}
                 image={fav.image}
                 species={fav.species}
+                onClose={() => handleClose(fav.id)}
                 />
             ))}
         </div>
