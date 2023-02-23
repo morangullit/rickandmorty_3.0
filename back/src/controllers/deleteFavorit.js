@@ -1,15 +1,19 @@
-const favorit = require('../utils/favs');
+let favorit = require('../utils/favs');
 
 const deleteFavorit = async (req, res) => {
-    const {id} = req.params;
+    const { id } = req.params;
     
-    if(id){
-
-        const listFavorit =  favorit.filter( f => f.id != id);
-        favorit.splice(listFavorit.indexOf(id), 1);
-        res.status(200).json({message: `Favorit with ID ${id} not found`})
+    if (id) {
+        const filteredFavorit = favorit.filter(f => f.id != id);
+        favorit.splice(0, favorit.length);
+        favorit.push(...filteredFavorit);
+        //favorit = filteredFavorit;
+        console.log(favorit)
+        res.status(200).json({ message: `Favorite with ID ${id} was deleted` });
+    } else {
+        res.status(400).json({ message: 'Invalid ID' });
     }
-    
 }
 
 module.exports = deleteFavorit;
+

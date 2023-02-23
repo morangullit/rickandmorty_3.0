@@ -10,8 +10,9 @@ const router = Router();
 
 router.get('/onsearch/:id', getChatById);
 router.get('/detail/:id', getCharDetail);
-router.post('/fav', postFavorit);
+
 router.get('/fav', getFavorit);
+router.post('/fav', postFavorit);
 router.delete('/fav/:id', deleteFavorit)
 
 module.exports = { router }
