@@ -7,8 +7,6 @@ const deleteFavorit = async (req, res) => {
         const filteredFavorit = favorit.filter(f => f.id != id);
         favorit.splice(0, favorit.length);
         favorit.push(...filteredFavorit);
-        //favorit = filteredFavorit;
-        console.log(favorit)
         res.status(200).json({ message: `Favorite with ID ${id} was deleted` });
     } else {
         res.status(400).json({ message: 'Invalid ID' });
