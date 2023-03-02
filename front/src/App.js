@@ -18,11 +18,11 @@ function App (props) {
   const location = useLocation();
   const navigate = useNavigate();
   const username = 'gmoran@gmail.com';
-  const password = '1234';
+  const password = 'gmoran1234';
 
   const login =(userData) => {
     if (userData.password === password && userData.username === username) {
-       setAccess(true);
+       setAccess(false);
        navigate('/home');
     }
  }
