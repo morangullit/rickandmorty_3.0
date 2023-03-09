@@ -1,20 +1,16 @@
-const favorit = require('../utils/favs');
+const { json } = require('sequelize');
+const { Favorite } = require('../DB_connection');
 
-const posFavorit = async (req, res) => {
-
-  const  character = req.body;
-
-  if (character) {
-  //  console.log(JSON.stringify(req.body));
-    favorit.push(character);
-  }
-
+const postFav = async (req, res) => {
   try {
-    //res.body = JSON.parse(req.body);
-    res.status(200).send(req.body);
+    const character = req.body;
+    character.origin = JSON.stringify(character.origin);
+    const newFavorite = await Favorite.create(character);
+    res.status(201).json(newFavorite);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.log(error);
+    res.status(500).json({ message: 'Internal server error' });
   }
 };
 
-module.exports = posFavorit;
+module.exports = postFav;

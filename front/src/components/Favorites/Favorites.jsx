@@ -50,6 +50,8 @@ export function Favorites ({ myFavorites }){
                 gender={fav.gender}
                 image={fav.image}
                 species={fav.species}
+                status={fav.status}
+                origin={fav.origin}
                 onClose={() => handleClose(fav.id)}
                 />
             ))}

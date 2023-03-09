@@ -25,7 +25,9 @@ export const addFavorite = (props) => {
         gender: props.gender,
         image: props.image,
         name: props.name,
-        species: props.species
+        species: props.species,
+        status: props.status,
+        origin: props.origin
       });
       const data = await response.data;
       dispatch({ type: ADD_FAVORITE, payload: data });

@@ -14,6 +14,8 @@ const Cards = (props) => {
           species={character.species}
           gender={character.gender}
           image={character.image}
+          status={character.status}
+          origin={character.origin}
           onClose={() => onClose(character.id)}
         />
       ))}
