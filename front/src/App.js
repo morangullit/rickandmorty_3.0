@@ -28,7 +28,7 @@ function App (props) {
  }
 
  useEffect(() => {
-  !access && navigate('/');
+  !access && navigate('/home');
 // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [access]);
 
