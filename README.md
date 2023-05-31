@@ -13,3 +13,7 @@ npm start
 # Observacion
 
 Para poder visualizar el proyecto y probarlo tienes que hacer "npm start" en ambas carpetas tanto del BACK como del FRONT
+
+# Iniciar Sesion
+
+Para iniciar Sesion colocar el usuario prueba@prueba.com y contraseña Prueba1234
